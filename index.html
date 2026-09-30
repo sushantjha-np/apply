@@ -11,7 +11,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Careers at Sundar Sewa Pvt. Ltd. View the latest vacancy for Accounting Interns in Kalimati, Kathmandu. Click to see full details and apply by email.">
+    <meta name="description" content="Careers at Sundar Sewa Pvt. Ltd. View the latest vacancy for Accounting Interns in Kalimati, Kathmandu. Apply instantly via WhatsApp or Email.">
     <meta name="keywords" content="Sundar Sewa careers, accounting intern vacancy, Kathmandu jobs, internship, Nepal accounting job">
     <meta name="author" content="Sundar Sewa Pvt. Ltd.">
     <title>Careers at Sundar Sewa</title>
@@ -19,7 +19,7 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/sushantjha143/Sundar-Sewa/main/images/SUNDARSEWA-favicon.jpg">
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/sushantjha143/Sundar-Sewa/main/images/SUNDARSEWA-favicon.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="https://raw.githubusercontent.com/sushantjha143/Sundar-Sewa/main/images/SUNDARSEWA-favicon.jpg">
     <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/sushantjha143/Sundar-Sewa/main/images/SUNDARSEWA-favicon.jpg">
 
     <!-- Open Graph -->
@@ -34,12 +34,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
         body { font-family: 'Segoe UI', Roboto, system-ui, sans-serif; line-height: 1.6; color: #1a1a1a; background: #fff; }
         .container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
-        :root { --primary-dark:#1e1e1e; --accent-gold:#FECE0E; --accent-orange:#FE7B03; --soft:#fff8eb; --border:#f1dca5; --muted:#5a5a5a; }
+        :root { --primary-dark:#1e1e1e; --accent-gold:#FECE0E; --accent-orange:#FE7B03; --soft:#fff8eb; --border:#f1dca5; --muted:#5a5a5a; --wa-green:#25D366; --danger:#dc2626; }
 
         .top-header { background: var(--primary-dark); color: #f0f0f0; padding: 10px 0; font-size: .95rem; }
         .top-header .container { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px; }
@@ -54,7 +53,7 @@
         .logo img { width:190px; max-width:100%; height:auto; display:block; }
         nav { display:flex; align-items:center; }
         nav ul { display:flex; gap:28px; font-weight:600; }
-        nav ul li a { color: var(--primary-dark); padding:8px 0; border-bottom:2px solid transparent; transition:.2s; font-size:1rem; }
+        nav ul li a { color: var(--primary-dark); padding:8px 0; border-bottom:2px solid transparent; transition: border-color .2s, color .2s; font-size:1rem; }
         nav ul li a:hover, nav ul li a.active { border-bottom-color: var(--accent-orange); color:#000; }
         .menu-toggle { display:none; font-size:1.8rem; cursor:pointer; color:var(--primary-dark); padding:0 8px; z-index:1002; }
 
@@ -71,11 +70,25 @@
         .vacancy-left { display:flex; align-items:center; gap:14px; min-width:0; }
         .vacancy-icon { width:54px; height:54px; border-radius:16px; display:grid; place-items:center; background: rgba(255,255,255,.22); flex:0 0 auto; }
         .vacancy-icon i { font-size:1.35rem; }
-        .vacancy-text h2 { font-size:1.2rem; font-weight:800; margin-bottom:4px; }
+        .vacancy-text h2 { font-size:1.2rem; font-weight:800; margin-bottom:6px; }
         .vacancy-text p { font-size:.98rem; opacity:.95; }
         .vacancy-date { font-weight:800; padding:10px 14px; border-radius:999px; background: rgba(255,255,255,.20); white-space:nowrap; }
         .chev { transition: transform .25s ease; font-size:1.05rem; }
         details[open] .chev { transform: rotate(180deg); }
+
+        .status-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 5px 12px; border-radius: 999px;
+            font-size: 0.72rem; font-weight: 800;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            line-height: 1;
+        }
+        .status-badge.closed {
+            background: var(--danger);
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(220,38,38,0.35);
+        }
+        .status-badge.closed i { font-size: 0.7rem; }
 
         .vacancy-body { padding: 24px; background: linear-gradient(180deg, #fffefb 0%, #fff9ef 100%); }
         .detail-grid { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:12px; margin-bottom: 18px; }
@@ -85,16 +98,255 @@
         .detail-box span { color:#555; }
 
         .section-box { background:#fff; border:1px solid #f5e2aa; border-radius:18px; padding:18px; margin-bottom: 16px; }
-        .section-box h3 { font-size:1.1rem; color: var(--primary-dark); margin-bottom:8px; font-weight:800; }
+        .section-box:last-child { margin-bottom: 0; }
+        .section-box h3 { font-size:1.1rem; color: var(--primary-dark); margin-bottom:8px; font-weight:800; display:flex; align-items:center; gap:8px; }
+        .section-box h3 i { color: var(--accent-orange); }
         .section-box p { color:#404040; }
         .list { display:grid; gap:10px; margin-top:10px; }
         .list li { display:flex; gap:10px; align-items:flex-start; background:#fffaf1; border:1px solid #f6e3ad; border-radius:14px; padding:12px 14px; color:#404040; }
         .list li i { color: var(--accent-orange); margin-top:2px; }
 
         .apply-row { display:flex; gap:14px; flex-wrap:wrap; margin-top: 14px; }
-        .apply-btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:14px 18px; border-radius:14px; background: linear-gradient(135deg, var(--accent-orange), var(--accent-gold)); color:#1d1600; font-weight:900; box-shadow:0 10px 24px rgba(254,123,3,.18); }
-        .apply-btn:hover { filter: brightness(.98); }
-        .email-pill { display:inline-flex; align-items:center; gap:10px; padding:14px 16px; border-radius:14px; background:#fff7df; border:1px solid #f3dc91; font-weight:700; color:#433000; }
+
+        /* Buttons */
+        .apply-btn {
+            display:inline-flex; align-items:center; justify-content:center; gap:10px;
+            padding:14px 26px; border-radius:14px; border:none;
+            background: linear-gradient(135deg, #1FBE5B, #25D366);
+            color:#ffffff; font-weight:900; font-size:1rem;
+            box-shadow:0 10px 24px rgba(37,211,102,.28);
+            transition: transform .15s ease, box-shadow .2s ease;
+            cursor: pointer; font-family: inherit;
+            will-change: transform;
+        }
+        .apply-btn i { font-size:1.15rem; }
+        .apply-btn:hover { transform: translate3d(0,-1px,0); box-shadow:0 14px 28px rgba(37,211,102,.34); }
+        .apply-btn:active { transform: translate3d(0,0,0); }
+
+        .wa-pill { display:inline-flex; align-items:center; gap:10px; padding:14px 16px; border-radius:14px; background:#e9fbf0; border:1px solid #b7ecc9; font-weight:700; color:#0b5b2b; }
+        .wa-pill i { color: var(--wa-green); }
+
+        .apply-note {
+            margin-top:14px; display:flex; gap:10px; align-items:flex-start;
+            background:#fff7df; border:1px dashed #f3dc91; border-radius:14px;
+            padding:12px 14px; color:#5a4300; font-size:.95rem;
+        }
+        .apply-note i { color: var(--accent-orange); margin-top:3px; }
+
+        /* Inside-vacancy apply block */
+        .apply-inline {
+            margin-top: 6px;
+            padding: 18px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(254,206,14,0.14), rgba(254,123,3,0.08));
+            border: 1.5px dashed #f3d47a;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .apply-inline-text { font-weight: 600; color: #5a4300; font-size: .95rem; margin: 0; }
+        .apply-inline .apply-btn { padding: 12px 22px; font-size: .95rem; }
+
+        /* Bottom Apply area (outside vacancy card) */
+        .bottom-apply-wrap { max-width: 860px; margin: 24px auto 0; }
+        .bottom-apply {
+            padding: 24px 22px;
+            background: linear-gradient(135deg, rgba(254,206,14,0.16), rgba(254,123,3,0.10));
+            border: 1.5px dashed #f3d47a;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 22px rgba(254,123,3,0.08);
+        }
+        .bottom-apply-text { font-weight: 600; color: #5a4300; margin-bottom: 14px; font-size: 1rem; }
+        .bottom-apply .apply-btn { min-width: 240px; }
+
+        /* Modal — optimized: no backdrop-filter, GPU-friendly animation */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(20, 14, 0, 0.62);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal-content {
+            background: #fff;
+            border-radius: 24px;
+            max-width: 560px;
+            width: 100%;
+            max-height: 92vh;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+            animation: modalFadeIn 0.18s ease-out;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translate3d(0, 12px, 0) scale(0.985); }
+            to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px 14px;
+            border-bottom: 1px solid #f0e4c8;
+            background: #fff;
+            border-radius: 24px 24px 0 0;
+        }
+        .modal-header h3 { font-size: 1.2rem; font-weight: 800; color: var(--primary-dark); margin: 0; }
+        .modal-close {
+            background: none; border: none;
+            font-size: 1.9rem; line-height: 1;
+            cursor: pointer; color: #999;
+            padding: 0 4px;
+            transition: color 0.15s;
+        }
+        .modal-close:hover { color: #333; }
+        .modal-body { padding: 20px 24px 24px; }
+        .modal-intro { font-size: 0.93rem; color: #555; margin-bottom: 18px; line-height: 1.55; }
+
+        .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+        .form-grid .full { grid-column: 1 / -1; }
+
+        .form-group { margin-bottom: 0; position: relative; }
+        .form-group label { display: block; font-weight: 600; font-size: 0.9rem; color: #333; margin-bottom: 6px; }
+        .required { color: #e74c3c; }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #e0d7bd;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background: #fff;
+            color: #1a1a1a;
+            transition: border-color 0.15s, box-shadow 0.15s;
+        }
+        .form-group textarea { resize: vertical; min-height: 70px; }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-orange);
+            box-shadow: 0 0 0 3px rgba(254,123,3,0.12);
+        }
+        .form-group select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+            padding-right: 42px;
+            cursor: pointer;
+        }
+        .form-group select:invalid { color: #999; }
+        .form-group select option { color: #1a1a1a; }
+
+        /* Phone input wrapper */
+        .phone-wrap {
+            display: flex;
+            align-items: stretch;
+            border: 1px solid #e0d7bd;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            transition: border-color 0.15s, box-shadow 0.15s;
+        }
+        .phone-wrap:focus-within {
+            border-color: var(--accent-orange);
+            box-shadow: 0 0 0 3px rgba(254,123,3,0.12);
+        }
+        .phone-prefix {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 0 12px;
+            background: #fbf5e5;
+            color: #5a4300;
+            font-weight: 700;
+            font-size: 0.92rem;
+            border-right: 1px solid #f0e4c8;
+            white-space: nowrap;
+        }
+        .phone-wrap input {
+            border: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            flex: 1;
+            padding: 12px 14px;
+            min-width: 0;
+        }
+        .phone-wrap input:focus { box-shadow: none !important; }
+
+        .field-hint {
+            display: block;
+            font-size: 0.78rem;
+            color: #888;
+            margin-top: 5px;
+            min-height: 16px;
+            transition: color 0.15s;
+        }
+        .field-hint.error { color: #e74c3c; font-weight: 600; }
+        .field-hint.ok { color: #16a34a; font-weight: 600; }
+
+        .form-group.invalid input,
+        .form-group.invalid select,
+        .form-group.invalid textarea {
+            border-color: #e74c3c;
+            box-shadow: 0 0 0 3px rgba(231,76,60,0.12);
+        }
+        .form-group.invalid .phone-wrap {
+            border-color: #e74c3c;
+            box-shadow: 0 0 0 3px rgba(231,76,60,0.12);
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .btn-primary, .btn-secondary, .btn-email {
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+            transition: transform 0.12s ease, box-shadow 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+            will-change: transform;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #1FBE5B, #25D366);
+            color: #fff;
+            box-shadow: 0 6px 16px rgba(37,211,102,0.3);
+        }
+        .btn-primary:hover { transform: translate3d(0,-1px,0); box-shadow: 0 8px 20px rgba(37,211,102,0.4); }
+        .btn-email {
+            background: #fff;
+            color: #1a1a1a;
+            border: 1.5px solid #d9c98f;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .btn-email i { color: var(--accent-orange); }
+        .btn-email:hover { background: #fffaf0; border-color: var(--accent-orange); }
+        .btn-secondary { background: #f0f0f0; color: #444; }
+        .btn-secondary:hover { background: #e4e4e4; }
 
         footer { background: var(--primary-dark); color:#e0e0e0; padding-top:60px; }
         .footer-content { display:grid; grid-template-columns:repeat(4, 1fr); gap:40px; padding-bottom:40px; }
@@ -102,18 +354,18 @@
         .footer-about p { opacity:.8; }
         .footer-links h3, .footer-services h3, .footer-contact h3 { color:#fff; margin-bottom:20px; font-size:1.3rem; }
         .footer-links ul li, .footer-services ul li { margin-bottom:12px; }
-        .footer-links a, .footer-services a { opacity:.8; transition:.2s; }
+        .footer-links a, .footer-services a { opacity:.8; transition: opacity .2s, color .2s; }
         .footer-links a:hover, .footer-services a:hover { opacity:1; color: var(--accent-gold); }
         .footer-contact p { margin-bottom:14px; display:flex; align-items:center; gap:12px; opacity:.9; }
         .footer-contact i { width:22px; color: var(--accent-orange); }
         .footer-bottom { border-top:1px solid #3a3a3a; padding:24px 0; text-align:center; font-size:.95rem; opacity:.9; }
 
-        /* Crafted by SANKHA */
         .crafted-by-sankha {
             display: inline-flex; align-items: center; gap: 10px; margin-top: 16px;
             padding: 12px 24px; border-radius: 999px; background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.15); transition: all 0.3s ease;
-            font-weight: 500; letter-spacing: 0.4px; backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: 500; letter-spacing: 0.4px;
         }
         .crafted-by-sankha:hover {
             background: rgba(255,255,255,0.08); border-color: var(--accent-gold);
@@ -144,11 +396,23 @@
             .detail-grid { grid-template-columns:1fr; }
             .vacancy-summary { flex-direction:column; align-items:flex-start; }
             .vacancy-date { white-space:normal; }
+            .apply-btn, .wa-pill { width:100%; justify-content:center; }
+            .form-actions { flex-direction: column; }
+            .btn-primary, .btn-secondary, .btn-email { width: 100%; }
+            .form-grid { grid-template-columns: 1fr; }
+            .bottom-apply .apply-btn { width: 100%; }
+            .apply-inline { flex-direction: column; align-items: stretch; text-align: center; }
+            .apply-inline .apply-btn { width: 100%; }
         }
         @media screen and (max-width: 480px) {
             .container { padding:0 16px; }
             .vacancy-summary, .vacancy-body { padding:18px; }
             .vacancy-text h2 { font-size:1.05rem; }
+            .modal-body, .modal-header { padding-left: 18px; padding-right: 18px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .modal-content { animation: none; }
+            .apply-btn, .btn-primary, .btn-secondary, .btn-email { transition: none; }
         }
     </style>
 
@@ -177,19 +441,12 @@
                 "addressCountry": "NP"
             }
         },
-        "applicantLocationRequirements": {
-            "@type": "Country",
-            "name": "Nepal"
-        },
+        "applicantLocationRequirements": { "@type": "Country", "name": "Nepal" },
         "educationRequirements": "Plus Two completed or Bachelor running",
         "baseSalary": {
             "@type": "MonetaryAmount",
             "currency": "NPR",
-            "value": {
-                "@type": "QuantitativeValue",
-                "value": "Negotiable",
-                "unitText": "MONTH"
-            }
+            "value": { "@type": "QuantitativeValue", "value": "Negotiable", "unitText": "MONTH" }
         }
     }
     </script>
@@ -206,7 +463,7 @@
             <a href="https://www.facebook.com/sundarsewa.com.np" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="https://vm.tiktok.com/ZSkEfajMJ/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
             <a href="https://www.instagram.com/sundarsewa.com.np" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/9851126502" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/9779851126502" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             <a href="https://youtu.be/uCSDP7n0V1E?si=U573vs6vVOO2YtM2" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
     </div>
@@ -220,8 +477,8 @@
         <nav>
             <ul id="navMenu">
                 <li><a href="https://www.sundarsewa.com.np">Home</a></li>
+                <li><a href="https://blogs.sundarsewa.com.np">Blogs</a></li>
                 <li><a href="https://www.sundarsewa.com.np/services.html">Services</a></li>
-                <!-- Only Careers uses the apply subdomain -->
                 <li><a href="http://apply.sundarsewa.com.np/" class="active">Careers</a></li>
                 <li><a href="https://www.sundarsewa.com.np/team-members.html">Team Members</a></li>
                 <li><a href="https://www.sundarsewa.com.np/contact.html">Contact</a></li>
@@ -237,7 +494,7 @@
         <div class="page-header">
             <div class="eyebrow"><i class="fas fa-briefcase"></i> Careers at Sundar Sewa</div>
             <h1>Current Vacancy</h1>
-            <p>Click on the vacancy to view the full details and application instructions.</p>
+            <p>Click on the vacancy to view the full details and apply instantly through WhatsApp or Email.</p>
         </div>
 
         <div class="vacancy-wrap">
@@ -247,7 +504,7 @@
                         <div class="vacancy-icon"><i class="fas fa-folder-open"></i></div>
                         <div class="vacancy-text">
                             <h2>Vacancy for Accounting Interns</h2>
-                            <p>Opening notice available on click</p>
+                            <p><span class="status-badge closed"><i class="fas fa-lock"></i> CLOSED</span></p>
                         </div>
                     </div>
                     <div class="vacancy-date">9 August, 2026</div>
@@ -263,32 +520,123 @@
                     </div>
 
                     <div class="section-box">
-                        <h3>Job Overview</h3>
+                        <h3><i class="fas fa-circle-info"></i> Job Overview</h3>
                         <p>Sundar Sewa Pvt. Ltd. is looking for an accounting intern who is interested in practical office work, accounting records, and professional learning in a trusted financial and legal service environment.</p>
                     </div>
 
+                    <!-- Apply button INSIDE the vacancy — pre-selects Position -->
                     <div class="section-box">
-                        <h3>Apply Now</h3>
-                        <div class="apply-row">
-                            <a class="apply-btn" href="mailto:sundarsewa.np@gmail.com?subject=Application%20for%20Accounting%20Intern%20Position&body=Dear%20Sundar%20Sewa%20Team,%0D%0A%0D%0AI%20would%20like%20to%20apply%20for%20the%20Accounting%20Intern%20position.%0D%0A%0D%0AName:%20%0D%0APhone:%20%0D%0AAddress:%20%0D%0AQualification:%20%0D%0A%0D%0ARegards,%0D%0A"><i class="fas fa-paper-plane"></i> Apply Now</a>
-                            <div class="email-pill"><i class="fas fa-envelope"></i> sundarsewa.np@gmail.com</div>
+                        <h3><i class="fas fa-paper-plane"></i> Apply for this Position</h3>
+                        <div class="apply-inline">
+                            <p class="apply-inline-text">Applying for <strong>Account Intern</strong>? Tap below:</p>
+                            <button type="button" class="apply-btn" data-open-apply data-preset-position="Account Intern">
+                                <i class="fas fa-paper-plane"></i> Apply Now
+                            </button>
                         </div>
                     </div>
 
                     <div class="section-box">
-                        <h3>Instructions</h3>
+                        <h3><i class="fas fa-list-check"></i> Instructions</h3>
                         <ul class="list">
-                            <li><i class="fas fa-check-circle"></i><span>Attach your updated CV.</span></li>
-                            <li><i class="fas fa-check-circle"></i><span>Add a short cover letter.</span></li>
-                            <li><i class="fas fa-check-circle"></i><span>Include your latest academic document if available.</span></li>
-                            <li><i class="fas fa-check-circle"></i><span>Click on above apply button or Send the application to <strong>sundarsewa.np@gmail.com</strong>.</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>Click any <strong>Apply Now</strong> button to open the application form.</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>Fill in your <strong>name, phone, address, qualification,</strong> and <strong>joining availability</strong>.</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>Choose <strong>Send via WhatsApp</strong> or <strong>Send via Email</strong> to submit your application.</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>In WhatsApp/Email, attach your <strong>updated CV/Resume</strong>, <strong>recent photo</strong>, and <strong>academic documents</strong>.</span></li>
                         </ul>
                     </div>
                 </div>
             </details>
         </div>
+
+        <!-- Apply Now button — OUTSIDE and BELOW the vacancy card -->
+        <div class="bottom-apply-wrap">
+            <div class="bottom-apply">
+                <p class="bottom-apply-text">Ready to apply? Click below to apply for any available post.</p>
+                <button type="button" class="apply-btn" data-open-apply>
+                    <i class="fas fa-paper-plane"></i> Apply Now
+                </button>
+            </div>
+        </div>
     </div>
 </main>
+
+<!-- Apply Modal -->
+<div class="modal-overlay" id="applyModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="modalTitle">Apply for Accounting Intern</h3>
+            <button type="button" class="modal-close" id="closeApplyModal" aria-label="Close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p class="modal-intro">Fill in your details below, then choose <strong>Send via WhatsApp</strong> or <strong>Send via Email</strong>. You'll be able to attach your CV, photo, and documents after that.</p>
+            <form id="applyForm" novalidate autocomplete="on">
+                <div class="form-grid">
+                    <div class="form-group full">
+                        <label for="modalPosition">Position <span class="required">*</span></label>
+                        <select id="modalPosition" name="position" required>
+                            <option value="" disabled selected>Select position</option>
+                            <option value="Account Intern">Account Intern</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="modalFullName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="modalFullName" name="fullName" required placeholder="Riyansh Jha" autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="modalPhone">Phone Number <span class="required">*</span></label>
+                        <div class="phone-wrap">
+                            <span class="phone-prefix"><i class="fas fa-phone"></i> +977</span>
+                            <input type="tel" id="modalPhone" name="phone" required
+                                   placeholder="98XXXXXXXX"
+                                   inputmode="numeric"
+                                   maxlength="10"
+                                   pattern="[0-9]{10}"
+                                   autocomplete="tel-national"
+                                   data-phone>
+                        </div>
+                        <small class="field-hint" data-hint="phone">Enter a 10-digit mobile number (e.g. 98XXXXXXXX)</small>
+                    </div>
+                    <div class="form-group full">
+                        <label for="modalAddress">Address <span class="required">*</span></label>
+                        <input type="text" id="modalAddress" name="address" required placeholder="e.g. Kalimati, Kathmandu" autocomplete="street-address">
+                    </div>
+                    <div class="form-group">
+                        <label for="modalQualification">Qualification <span class="required">*</span></label>
+                        <select id="modalQualification" name="qualification" required>
+                            <option value="" disabled selected>Select qualification</option>
+                            <option value="+2 Passed">+2 Passed</option>
+                            <option value="Bachelor Running">Bachelor Running</option>
+                            <option value="Bachelor Completed">Bachelor Completed</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="modalAvailable">Available to Join <span class="required">*</span></label>
+                        <select id="modalAvailable" name="available" required>
+                            <option value="" disabled selected>Select availability</option>
+                            <option value="Immediately">Immediately</option>
+                            <option value="Within a week">Within a week</option>
+                            <option value="After a week">After a week</option>
+                            <option value="After 2 weeks">After 2 weeks</option>
+                        </select>
+                    </div>
+                    <div class="form-group full">
+                        <label for="modalCover">Short Cover Letter / Message (Optional)</label>
+                        <textarea id="modalCover" name="coverLetter" rows="3" placeholder="Tell us why you're interested..."></textarea>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancelApply">Cancel</button>
+                    <button type="button" class="btn-email" data-send="email">
+                        <i class="fas fa-envelope"></i> Send via Email
+                    </button>
+                    <button type="button" class="btn-primary" data-send="whatsapp">
+                        <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <footer>
     <div class="container">
@@ -338,16 +686,283 @@
 </footer>
 
 <script>
+    /* ---------- Mobile menu ---------- */
     (function() {
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu = document.getElementById('navMenu');
-        const menuIcon = menuToggle.querySelector('i');
+        var menuToggle = document.getElementById('menuToggle');
+        var navMenu = document.getElementById('navMenu');
+        var menuIcon = menuToggle.querySelector('i');
         function closeMenu() { navMenu.classList.remove('active'); menuIcon.classList.remove('fa-times'); menuIcon.classList.add('fa-bars'); document.body.style.overflow = ''; }
         function openMenu() { navMenu.classList.add('active'); menuIcon.classList.remove('fa-bars'); menuIcon.classList.add('fa-times'); document.body.style.overflow = 'hidden'; }
         menuToggle.addEventListener('click', function(e) { e.stopPropagation(); navMenu.classList.contains('active') ? closeMenu() : openMenu(); });
-        navMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+        navMenu.querySelectorAll('a').forEach(function(link){ link.addEventListener('click', closeMenu); });
         document.addEventListener('click', function(event) { if (navMenu.classList.contains('active') && !navMenu.contains(event.target) && !menuToggle.contains(event.target)) closeMenu(); });
         window.addEventListener('resize', function() { if (window.innerWidth > 768 && navMenu.classList.contains('active')) closeMenu(); });
+    })();
+
+    /* ---------- Apply logic ---------- */
+    (function () {
+        var WHATSAPP_NUMBER = '9779851126502';
+        var EMAIL_ADDRESS = 'sundarsewa.np@gmail.com';
+        var PHONE_HINT_DEFAULT = 'Enter a 10-digit mobile number (e.g. 98XXXXXXXX)';
+
+        var modal = document.getElementById('applyModal');
+        var form = document.getElementById('applyForm');
+        var closeBtn = document.getElementById('closeApplyModal');
+        var cancelBtn = document.getElementById('cancelApply');
+        var positionSelect = document.getElementById('modalPosition');
+        var phoneInput = form.querySelector('[data-phone]');
+        var phoneHint = document.querySelector('[data-hint="phone"]');
+        var phoneGroup = phoneInput.parentNode.parentNode; // .form-group
+
+        // Cache required fields + their groups once
+        var requiredFields = Array.prototype.slice.call(form.querySelectorAll('[required]'));
+        var fieldGroups = requiredFields.map(function (el) { return el.closest('.form-group'); });
+
+        /* ---------- Phone helpers ---------- */
+        function sanitizePhone(value) {
+            var out = '';
+            var v = String(value || '');
+            for (var i = 0; i < v.length && out.length < 10; i++) {
+                var c = v.charCodeAt(i);
+                if (c >= 48 && c <= 57) out += v.charAt(i);
+            }
+            return out;
+        }
+
+        function applyPhoneHint(len) {
+            var text, cls;
+            if (len === 0) { text = PHONE_HINT_DEFAULT; cls = 'field-hint'; }
+            else if (len === 10) { text = 'Looks good ✓'; cls = 'field-hint ok'; }
+            else { text = len + '/10 digits'; cls = 'field-hint'; }
+            if (phoneHint.textContent !== text) phoneHint.textContent = text;
+            if (phoneHint.className !== cls) phoneHint.className = cls;
+        }
+
+        phoneInput.addEventListener('input', function () {
+            var v = phoneInput.value;
+            var digits = sanitizePhone(v);
+            if (v !== digits) phoneInput.value = digits;
+            applyPhoneHint(digits.length);
+        }, { passive: true });
+
+        phoneInput.addEventListener('keypress', function (e) {
+            if (e.key && e.key.length === 1 && !/[0-9]/.test(e.key)) e.preventDefault();
+        });
+
+        phoneInput.addEventListener('paste', function (e) {
+            e.preventDefault();
+            var pasted = (e.clipboardData || window.clipboardData).getData('text');
+            phoneInput.value = sanitizePhone(pasted);
+            applyPhoneHint(phoneInput.value.length);
+        });
+
+        phoneInput.addEventListener('blur', function () {
+            var len = phoneInput.value.length;
+            if (len === 0) {
+                phoneGroup.classList.remove('invalid');
+                applyPhoneHint(0);
+            } else if (len < 10) {
+                phoneGroup.classList.add('invalid');
+                phoneHint.className = 'field-hint error';
+                phoneHint.textContent = 'Must be exactly 10 digits (' + len + '/10).';
+            } else {
+                phoneGroup.classList.remove('invalid');
+                phoneHint.className = 'field-hint ok';
+                phoneHint.textContent = 'Looks good ✓';
+            }
+        });
+
+        /* ---------- Live invalid clearing (delegated, passive) ---------- */
+        form.addEventListener('input', function (e) {
+            var el = e.target;
+            if (!el || !el.closest) return;
+            if (el === phoneInput) return; // handled separately
+            var g = el.closest('.form-group');
+            if (g && g.classList.contains('invalid') && String(el.value || '').trim()) {
+                g.classList.remove('invalid');
+            }
+        }, { passive: true });
+
+        form.addEventListener('change', function (e) {
+            var el = e.target;
+            if (!el || el.tagName !== 'SELECT') return;
+            var g = el.closest('.form-group');
+            if (g && String(el.value || '').trim()) g.classList.remove('invalid');
+        }, { passive: true });
+
+        /* ---------- Validation ---------- */
+        function validateAll() {
+            var firstInvalid = null;
+            for (var i = 0; i < requiredFields.length; i++) {
+                var el = requiredFields[i];
+                var g = fieldGroups[i];
+                var empty = !String(el.value || '').trim();
+                if (empty) {
+                    if (!g.classList.contains('invalid')) g.classList.add('invalid');
+                    if (!firstInvalid) firstInvalid = el;
+                } else if (g.classList.contains('invalid')) {
+                    g.classList.remove('invalid');
+                }
+            }
+            // Phone-specific
+            var phoneLen = phoneInput.value.length;
+            if (phoneLen !== 10) {
+                phoneGroup.classList.add('invalid');
+                if (phoneLen === 0) {
+                    phoneHint.className = 'field-hint error';
+                    phoneHint.textContent = 'Phone number is required.';
+                } else {
+                    phoneHint.className = 'field-hint error';
+                    phoneHint.textContent = 'Must be exactly 10 digits (' + phoneLen + '/10).';
+                }
+                if (!firstInvalid) firstInvalid = phoneInput;
+            }
+            if (firstInvalid) {
+                try { firstInvalid.focus({ preventScroll: true }); } catch (err) { firstInvalid.focus(); }
+                return false;
+            }
+            return true;
+        }
+
+        /* ---------- Build message + send ---------- */
+        function getVal(name) {
+            var el = form.querySelector('[name="' + name + '"]');
+            return el ? String(el.value || '').trim() : '';
+        }
+
+        function buildMessage(d) {
+            var lines = [];
+            lines.push('*Application for ' + d.position + ' Position*');
+            lines.push('_Sundar Sewa Pvt. Ltd. - Kalimati, Kathmandu_');
+            lines.push('');
+            lines.push('Dear Hiring Team,');
+            lines.push('');
+            lines.push('I would like to apply for the ' + d.position + ' position. Please find my details below:');
+            lines.push('');
+            lines.push('• Position: ' + d.position);
+            lines.push('• Full Name: ' + d.fullName);
+            lines.push('• Phone Number: +977 ' + d.phone);
+            lines.push('• Address: ' + d.address);
+            lines.push('• Qualification: ' + d.qualification);
+            lines.push('• Available to Join: ' + d.available);
+            if (d.coverLetter) {
+                lines.push('');
+                lines.push('• Message: ' + d.coverLetter);
+            }
+            lines.push('');
+            lines.push('My updated CV/Resume & Photo have been attached below:');
+            lines.push('1. Updated CV / Resume');
+            lines.push('2. Recent Passport Size Photo');
+            lines.push('3. Latest Academic Document (if available)');
+            lines.push('');
+            lines.push('I am genuinely interested in learning and growing with your team. Kindly review my application and let me know the next steps.');
+            lines.push('');
+            lines.push('Thank you for your time and consideration.');
+            lines.push('');
+            lines.push('Regards,');
+            lines.push(d.fullName);
+            return lines.join('\n');
+        }
+
+        function collect() {
+            return {
+                position: getVal('position') || 'Account Intern',
+                fullName: getVal('fullName'),
+                phone: getVal('phone'),
+                address: getVal('address'),
+                qualification: getVal('qualification'),
+                available: getVal('available'),
+                coverLetter: getVal('coverLetter')
+            };
+        }
+
+        function resetFormState() {
+            form.reset();
+            phoneGroup.classList.remove('invalid');
+            phoneHint.className = 'field-hint';
+            phoneHint.textContent = PHONE_HINT_DEFAULT;
+            for (var i = 0; i < fieldGroups.length; i++) fieldGroups[i].classList.remove('invalid');
+        }
+
+        function sendWhatsApp() {
+            if (!validateAll()) return;
+            var data = collect();
+            var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(buildMessage(data));
+            window.open(url, '_blank', 'noopener');
+            closeModal();
+            resetFormState();
+        }
+
+        function sendEmail() {
+            if (!validateAll()) return;
+            var data = collect();
+            var subject = 'Application for ' + data.position + ' Position';
+            var url = 'mailto:' + EMAIL_ADDRESS +
+                '?subject=' + encodeURIComponent(subject) +
+                '&body=' + encodeURIComponent(buildMessage(data));
+            window.location.href = url;
+            closeModal();
+            resetFormState();
+        }
+
+        /* ---------- Modal controls with preset position ---------- */
+        var lastFocused = null;
+
+        function openModal(presetPosition) {
+            // Pre-select or reset the Position field
+            if (presetPosition) {
+                positionSelect.value = presetPosition;
+                positionSelect.closest('.form-group').classList.remove('invalid');
+            } else {
+                positionSelect.value = '';
+            }
+
+            lastFocused = document.activeElement;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            requestAnimationFrame(function () {
+                var first = form.querySelector('select, input');
+                if (first) { try { first.focus({ preventScroll: true }); } catch (e) { first.focus(); } }
+            });
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            if (lastFocused && lastFocused.focus) {
+                try { lastFocused.focus({ preventScroll: true }); } catch (e) {}
+            }
+        }
+
+        // Buttons that open the modal (with optional preset)
+        document.querySelectorAll('[data-open-apply]').forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                var preset = btn.getAttribute('data-preset-position') || '';
+                openModal(preset);
+            });
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+        cancelBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+        });
+
+        // Send buttons
+        document.querySelectorAll('[data-send]').forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                var mode = btn.getAttribute('data-send');
+                if (mode === 'whatsapp') sendWhatsApp();
+                else if (mode === 'email') sendEmail();
+            });
+        });
+
+        // Prevent Enter from reloading the page
+        form.addEventListener('submit', function (e) { e.preventDefault(); });
     })();
 </script>
 </body>
